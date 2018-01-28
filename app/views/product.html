@@ -1,0 +1,32 @@
+<!--PRODUCT PAGE
+Alberto Aguado-->
+
+<button class="backButton" ng-click="backButton()"><i class="fa fa-arrow-left"></i> BACK</button>
+
+<div ng-repeat="x in inventory">
+
+    <div ng-repeat="y in x.subcategories">
+                
+        <div ng-repeat="z in y.items | orderBy: sortBy | filter:{'name':model.itemName}" class="col-row imageFrame" ng-class="{nostock: z.stock === '0'}">
+           	
+           	<div class="col-xs-12 col-sm-6 productImageBox">
+				<img ng-src="{{z.imagelink}}" alt="item image">
+				 <div class="productPrice">{{z.price | currency}}</div>
+			</div>
+
+           	<div class="col-xs-12 col-sm-6 productDetailBox">
+           		<h2 class="productName">{{z.name}}</h2>
+           		<div class="productDescription">{{z.description}}</div>
+			    <div class="productRating">Rating: {{z.rating}}/5</div>
+			    <div class="productStock">Stock: {{z.stock}}</div>
+			  	<div class="productQty">
+			  		<input type="number" id="QtyInput" ng-model="qty" value="1" min="1" max="50" placeholder="Qty"/>	    
+			    	<button ng-click="addQtyToCart(z,qty)">ADD</button>
+			    </div>	
+			</div>
+
+        </div>
+             
+    </div>
+    
+</div>

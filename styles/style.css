@@ -1,0 +1,417 @@
+html, body {
+	font-family: 'Abril Fatface', cursive;
+	height: 100%;
+	margin: 0;
+  	padding: 0;
+  	background-color:#ecf0f1;
+}
+
+#wrapper {
+	display: -webkit-box;
+  	display: -ms-flexbox;
+  	display: flex;
+  	-webkit-box-orient: vertical;
+  	-webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  	min-height: 100%;
+}
+
+/*HEADER*/
+header nav#cabecera {
+	margin-bottom:0px;
+	border: 20px solid rgba(92, 151, 191, 1); background-color:#424242; color:white; min-height:100px; margin-bottom: 0px;
+}
+
+.albertosbrand {
+	font-size:2em; 
+	margin-top:5px; 
+	display:inline-block; 
+	transform: scale(1,2);
+	color:white !important; 
+	text-shadow:2px 1px 0px rgba(255, 241, 118, 1);
+}
+
+#headerbutton{
+	margin-top:14px;
+}
+
+#headerCollapse #firstButton{
+	margin-top:6px;
+}
+
+#headerCollapse #firstButton a{
+	color:white;
+}
+
+#headerCollapse #secondButton{
+	position:relative;
+}
+
+#headerCollapse #secondButton a{
+	color:white; 
+	margin-top: 5px;
+}
+
+#headerCollapse #secondButton a div{
+	position:relative;
+}
+
+#headerCollapse #secondButton a div i{
+	font-size:2em;
+}
+
+#headerCollapse #secondButton a div div{
+	position:absolute; 
+	top:-10px; 
+	left: 12px;
+}
+
+/*HOME PAGE*/
+#homeButton {
+	padding:15px;
+	background-color:rgba(92, 151, 191, 1);
+	width:100px;
+	margin:0 auto;
+	margin-bottom:10px;
+	color:white;
+}
+
+#homeCarousel {
+	/*border: 20px solid rgba(92, 151, 191, 1);*/
+}
+
+#toggleCarouselBtn{
+	width:20px;
+	height:20px;
+    position: relative;
+    vertical-align: middle;
+    bottom: 4px;
+}
+
+#toggleCarouselLabel{
+	margin-left:10px;
+	cursor:pointer;
+}
+
+.carousel-indicators .active{
+	background-color:rgba(92,151,191,1);
+	border:1px solid black;
+}
+
+/*MAIN*/
+
+main {
+	-webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+main div.container#principal {
+	margin-top:150px;
+}
+	
+ul, li {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+
+h2.welcome {
+	font-family: 'Playball', cursive;
+	font-weight: bolder;
+	font-size: 3em;
+	text-align: center;
+	margin-top: 0px;
+}
+
+
+
+
+.nostock{ 
+	color:red;
+}
+
+#homeCarousel {
+  height:375px;
+}
+
+#homeCarousel .item {
+  background-color:white;
+}
+
+.carouselItem {
+	height: 350px;
+}
+
+#homeCarousel .carousel-inner {
+  height:350px; 
+  border: 2px solid black;
+}
+
+.carouselImg {
+  height: 350px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border:2px solid gray;
+}
+
+.carousel-indicators li{
+	border:1px solid gray;
+}
+
+
+/*SHOPPING PAGE*/
+#controlsBar {
+	display:flex; 
+	justify-content: space-between; 
+	margin-bottom:15px;
+	background-color: rgba(92, 151, 191, .25);
+	padding:5px;
+}
+
+#stockOnlyCheckbox {
+	margin-right:15px;
+	margin-left:5px;
+}
+
+#asideNavigation {
+	border-right: 1px solid gray;
+}
+
+#asideNavigation .categoryMenu {
+	font-size:1.20em;
+}
+
+.category {
+	padding-left: 10px;
+	cursor: pointer;
+	font-weight:bold;
+}
+
+.subcategory {
+	padding-left: 20px;
+	cursor: pointer;
+	font-weight: lighter;
+	font-size:0.9em;
+}
+
+.subcategoryActual {
+	font-weight:bold;
+	font-size:1.25em;
+	text-shadow:1px 1px 0px white;
+}
+
+/*PRODUCT PAGE*/
+.backButton{
+    font-size: 1.25em;
+    border-radius:5px;
+	margin-bottom:25px;
+	padding: 7px 14px 7px 14px;
+}
+
+.imageFrame{
+	height:250px;
+}
+
+.productImageBox img {
+	width:80%; 
+	display:block;
+	height:auto; 
+	margin:0 auto;
+	background-color:white;
+	padding:10px;
+	margin-bottom:25px;
+}
+
+.productPrice{
+	position:absolute; bottom: 5%;
+    left: 5%;
+    background: rgba(92, 151, 191, .85);
+    font-size: 2em;
+    padding: 10px;
+    text-shadow: 1px .5px 0px white;
+}
+
+.productDetailBox {
+	background-color:rgba(176,190,197,.5); 
+	display:flex; 
+	flex-direction: column; 
+	align-items:center; 
+	padding:10px 0px 10px 0px;
+}
+
+.productDetailBox h4{
+	text-align:center;
+}
+
+.productDetailBox .imageContainer{
+	height: 150px; 
+	width: 100px; 
+	border:2px solid rgba(92,151,191,1); 
+	background-color:white; 
+	flex-grow:1; 
+	position:relative;
+}
+
+.productDetailBox img{
+	max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
+}
+
+h2.productName {
+	font-size: 3em;
+	text-align:center;
+}
+
+.nostock .productStock{
+	color:red;
+}
+
+.productDescription{
+	text-align:center;
+	color:#424242;
+}
+
+.productRating{
+	text-align: center;
+	margin: 0 auto;
+	margin-top:15px;
+	color:#424242;
+	font-size:1.15em;
+}
+
+.productStock{
+	text-align: center;
+	margin: 0 auto;
+	color:#424242;
+	font-size:1.15em;
+}
+
+.productQty{
+	text-align: center;
+	margin: 0 auto;
+	margin-top:25px;
+}
+
+.productQty input{
+	padding:7px;
+    font-size: 1.25em;
+}
+
+.productQty button{
+	padding: 7px 14px 7px 14px;
+	border-radius:5px;
+    font-size: 1.25em;
+}
+
+/*CART PAGE*/
+#cartTotalBox{
+	text-align: right;
+}
+
+#cart th{
+	background-color: #424242;
+	color:white;
+}
+
+#cart th, td {
+	text-align:center;
+}
+
+#cart td input {
+	text-align: center;
+}
+
+.cartFormTitle{
+	color:black;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+#cartForm input {
+	width: 100%;
+	margin-bottom: 10px;
+	height: 40px;
+	padding-left: 5px;
+}
+
+#cartForm input::placeholder{
+	padding-left:5px;
+}
+
+.freeShipping{
+	color:rgba(66,66,66,.5);
+}
+
+
+/*CONTACT PAGE*/
+#contactForm input, #contactForm select{
+	display:block;
+	padding:10px;
+	width:100%;
+	margin:5px 0px 5px 0px;
+}
+
+#contactForm textarea{
+	display:block;
+	width:100%;
+	padding:10px;
+	min-height:200px;
+	resize: none; 
+}
+
+.contactText {
+	font-size:1.5em;
+}
+
+.contactEmail {
+	margin-top:15px;
+}
+
+.contactEmail i, .contactPhone i{
+	background-color: white;
+	padding: 7px;
+	border-radius: 25px;
+	margin:5px;
+}
+
+
+/*FOOTER*/
+
+footer {
+  	bottom:0px;
+  	width: 100%;
+   	background-color: rgba(92, 151, 191, 1);
+}
+
+footer nav div a {
+	text-align: center;
+	color: white;
+}
+
+#linkToMyWeb {
+	color: rgba(66,66,66,1);
+}
+
+#linkToMyWeb:hover {
+	background-color: rgba(92, 151, 191, 1);
+}
+
+
+@media (max-width: 576px) {
+  .albertosbrand {
+    font-size:1.33em;
+    color:white !important;
+    text-shadow:0px 0px 0px white;
+  }
+}

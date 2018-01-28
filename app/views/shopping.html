@@ -1,0 +1,42 @@
+<!--SHOPPING PAGE
+Alberto Aguado-->
+
+<h2>Shopping Page</h2>
+
+<div class="row">
+    <div class="col-xs-12" id="controlsBar"> 
+        <div>
+            Showing  <strong>{{getVisibleItemsinList();}}</strong>  items of  <strong>{{totalItemsinList}}</strong>  in <span class="subcategoryActual">{{subcategoryActual}}</span>
+        </div>
+        
+        <div>
+            <label for="stockOnlyCheckbox">In stock only</label> <input type="checkbox" ng-model="inStockOnly" ng-change="inStockOnlyChange" id="stockOnlyCheckbox">
+            <select ng-model="sortBy" ng-options="sort.value as sort.text for sort in sortOptions">
+            </select>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-3" id="asideNavigation"> 
+        <ul>
+            <li ng-repeat="x in inventory" class="category">
+                <span class="categoryMenu" ng-if="x.expanded" ng-click="toggleSubcategory(); x.expanded = false">- {{x.category}}</span>
+                <span class="categoryMenu" ng-if="!x.expanded" ng-click="toggleSubcategory(); x.expanded = true">+ {{x.category}}</span>
+                <ul ng-if="x.expanded">
+                    <li ng-repeat="y in x.subcategories" class="subcategory" ng-click="choseSubcategory(y.name);">
+                        <span class="subcategoryMenu">{{y.name}}</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-xs-12 col-sm-9"> 
+        <div ng-repeat="x in inventory">
+            <div ng-repeat="y in x.subcategories | filter:{'name':subcategoryActual}" class="row" ng-init="setTotals(y.items.length)">   
+                <div ng-repeat="z in y.items | orderBy: sortBy track by $index" ng-if="z.stock != '0' || inStockOnly==false" class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:275px">
+                   <item-info item="z" cart="cart"></item-info>  
+                </div>     
+            </div>
+        </div>
+    </div>
+</div>

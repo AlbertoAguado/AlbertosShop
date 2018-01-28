@@ -1,0 +1,13 @@
+<div class="productDetailBox">
+
+    <a href="#product?name={{item.name}}"><h4>{{item.name}}</h4></a>
+    <a href="#product?name={{item.name}}">
+        <div class="imageContainer">
+        <img ng-src="{{item.imagelink}}" alt="{{item.name}}"/>
+        </div>
+    </a>
+    
+    {{item.price | currency}}
+    <button ng-click="addItemToCart(item)">ADD</button>
+
+</div>

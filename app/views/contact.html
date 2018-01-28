@@ -1,0 +1,20 @@
+<!--CONTACT PAGE
+Alberto Aguado-->
+
+<h2>Contact</h2>
+
+<div class="col-xs-12 col-sm-6">
+	<form name="contactForm" ng-submit="submitContactForm()" id="contactForm">
+		<input type="text" placeholder="Name" ng-model="contactMessage.name" required />
+		<input type="email" placeholder="Email" ng-model="contactMessage.email" required/>
+		<select ng-model="contactMessage.subject" ng-options="subject for subject in contactSubjects"></select>
+		<textarea placeholder="Message" ng-model="contactMessage.text" required></textarea>
+		<input type="submit" value="Send"/>
+	</form>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+	<div class="contactText">Have questions about Alberto´s Shop?<br>Feel free to contact us.</div>
+	<div class="contactEmail"><i class="fa fa-envelope"></i>: info@albertoshop.com</div>
+	<div class="contactPhone"><i class="fa fa-phone"></i>:123-456-7890</div>
+</div>

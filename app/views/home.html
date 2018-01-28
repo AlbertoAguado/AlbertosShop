@@ -1,0 +1,90 @@
+<!--HOME PAGE
+Alberto Aguado-->
+
+<div class="col-row">
+  <div class="col-xs-12">
+    <h2 class="welcome">{{welcomeMessage}}</h2>
+    <a href="#/shopping"><h4 id="homeButton">Shop All</h4></a>
+  </div>
+
+  <div class="col-xs-12">
+    <!-- CAROUSEL -->
+    <div id="homeCarousel" class="carousel slide" data-interval="3000" >
+
+      <ol class="carousel-indicators">
+        <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#homeCarousel" data-slide-to="1"></li>
+        <li data-target="#homeCarousel" data-slide-to="2"></li>
+        <li data-target="#homeCarousel" data-slide-to="3"></li>
+      </ol>
+      
+      <div class="carousel-inner">
+        
+        <div class="item active">
+          <div ng-repeat="x in inventory">
+            <div class="row" ng-repeat="y in x.subcategories | filter:{'name':'Canned Food'}">   
+                <div class="col-xs-12 carouselItem" ng-repeat="z in y.items | orderBy: '-price' | limitTo: 1">
+                   <a href="#product?name={{z.name}}"><div class="carouselImg" style="background-image:url({{z.imagelink}});"></div></a>
+                </div>     
+            </div>
+          </div>
+        </div>
+
+        <div class="item ">
+          <div ng-repeat="x in inventory">
+            <div class="row" ng-repeat="y in x.subcategories | filter:{'name':'Baby Care'}">   
+                <div class="col-xs-6 carouselItem" ng-repeat="z in y.items | orderBy: '-price' | limitTo: 2">
+                   <a href="#product?name={{z.name}}"><div class="carouselImg" style="background-image:url({{z.imagelink}});"></div></a>
+                </div>     
+            </div>
+          </div>
+        </div>
+
+        <div class="item ">
+          <div ng-repeat="x in inventory">
+            <div class="row" ng-repeat="y in x.subcategories | filter:{'name':'Frozen Foods'}">   
+                <div class="col-xs-4 carouselItem" ng-repeat="z in y.items | orderBy: '-price' | limitTo: 3">
+                   <a href="#product?name={{z.name}}"><div class="carouselImg" style="background-image:url({{z.imagelink}});"></div></a>
+                </div>     
+            </div>
+          </div>
+        </div>
+
+        <div class="item ">
+          <div ng-repeat="x in inventory">
+            <div class="row" ng-repeat="y in x.subcategories | filter:{'name':'Fruits'}">   
+                <div class="col-xs-3 carouselItem" ng-repeat="z in y.items | orderBy: '-price' | limitTo: 4">
+                   <a href="#product?name={{z.name}}"><div class="carouselImg" style="background-image:url({{z.imagelink}});"></div></a>
+                </div>     
+            </div>
+          </div>
+        </div>
+        
+        <span class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></span>
+        <span class="right carousel-control" href="#homeCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></span>
+
+      </div>
+    </div>
+    <!-- fin del carousel -->
+  </div>
+  
+  <label for="toggleCarouselBtn"><input type="checkbox" id="toggleCarouselBtn"/><span id="toggleCarouselLabel">Toggle Slide Show</span></label>
+
+</div>
+
+<!--TOOGLE CAROUSEL FUNCTION-->
+<script>
+  $('#toggleCarouselBtn').click(function(){
+
+    if ($(this).is(':checked')) {
+      $('.carousel').carousel({interval: 3000});
+      $('.carousel').carousel('cycle');
+      console.info("The carousel is running.");
+      }
+    else {
+      $('.carousel').carousel('pause');
+      console.info("The carousel is stopped.");
+      }
+
+  });
+</script>
