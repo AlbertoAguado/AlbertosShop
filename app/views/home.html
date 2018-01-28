@@ -54,7 +54,7 @@ Alberto Aguado-->
           <div ng-repeat="x in inventory">
             <div class="row" ng-repeat="y in x.subcategories | filter:{'name':'Fruits'}">   
                 <div class="col-xs-3 carouselItem" ng-repeat="z in y.items | orderBy: '-price' | limitTo: 4">
-                   <a href="#product?name={{z.name}}"><div class="carouselImg" style="background-image:url({{z.imagelink}});"></div></a>
+                   <a href="#product?name={{z.name}}"><div class="carouselImg" style="background-image:url('{{getProperLink(z.imagelink)}}');"></div></a>
                 </div>     
             </div>
           </div>

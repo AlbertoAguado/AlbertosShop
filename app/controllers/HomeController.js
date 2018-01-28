@@ -8,4 +8,8 @@ app.controller('HomeController', function($scope) {
  		$scope.carousel = $scope.inventory;
  		console.log($scope.carousel);
   	}
+
+  	$scope.getProperLink = function(link){
+  		return link.replace(" ","%20");
+  	}
 })
